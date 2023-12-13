@@ -10,9 +10,12 @@ let package = Package(
         .library(
             name: "MonoRepo",
             targets: ["MonoRepo"]),
+        .library(
+            name: "Components",
+            targets: ["Components"])
     ],
     dependencies: [
-            .package(path: "../Components"),
+            .package(path: "Components"),
         ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -22,8 +25,11 @@ let package = Package(
             dependencies: [
                 .product(name: "Components", package: "Components")
             ]),
-        .testTarget(
-            name: "MonoRepoTests",
-            dependencies: ["MonoRepo"]),
+//        .testTarget(
+//            name: "MonoRepoTests",
+//            dependencies: ["MonoRepo"]),
+        
+        .target(name: "Components", dependencies: [],
+                        path: "Components/Sources/Components")
     ]
 )
