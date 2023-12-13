@@ -1,7 +1,7 @@
 import XCTest
-@testable import MonoRepoSample
+@testable import MonoRepo
 
-final class MonoRepoSampleTests: XCTestCase {
+final class MonoRepoTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
