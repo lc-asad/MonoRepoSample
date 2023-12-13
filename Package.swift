@@ -11,17 +11,19 @@ let package = Package(
             name: "MonoRepo",
             targets: ["MonoRepo"]),
     ],
+    dependencies: [
+            .package(path: "../Components"),
+        ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "MonoRepo"
-            ),
+            name: "MonoRepo",
+            dependencies: [
+                .product(name: "Components", package: "Components")
+            ]),
         .testTarget(
             name: "MonoRepoTests",
             dependencies: ["MonoRepo"]),
     ]
 )
-
-//dependencies: [
-//    .product(name: "Components", package: "Components")
