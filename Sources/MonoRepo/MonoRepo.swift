@@ -7,6 +7,7 @@ import Components
 public class ParentRepo {
     public let parentLog = "Parent Repo Log"
     public init() {
-        
+        let childRepo = Auth()
+        print(childRepo.childRepo)
     }
 }

@@ -3,9 +3,9 @@
 
 import Foundation
 
-public class AuthLocation {
-    public let childRepo = "Child Repo"
+public class Auth {
     public init() {
-        print("AuthLocation")
+        
     }
+    public let childRepo = "This is child repo"
 }
