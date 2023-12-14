@@ -19,9 +19,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "MonoRepo",
-            dependencies: [
-                .product(name: "Components", package: "Components")
-            ]),
+            dependencies: ["Components"]),
         .testTarget(
             name: "MonoRepoTests",
             dependencies: ["MonoRepo"]),
