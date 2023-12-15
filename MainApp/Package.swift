@@ -18,12 +18,12 @@ let package = Package(
         .package(path: "../Package2"),
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "MainApp",
             dependencies: [
                 "Package1",
                 "Package2",
             ]
-        )
+        ),
     ]
 )
