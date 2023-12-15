@@ -1,0 +1,38 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "package1",
+          "kind" : "fileSystem",
+          "location" : "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package1",
+          "name" : "Package1"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package1"
+        },
+        "subpath" : "package1"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "package2",
+          "kind" : "fileSystem",
+          "location" : "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2",
+          "name" : "Package2"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2"
+        },
+        "subpath" : "package2"
+      }
+    ]
+  },
+  "version" : 6
+}
