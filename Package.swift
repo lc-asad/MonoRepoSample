@@ -3,19 +3,21 @@
 
 // MainApp/Package.swift
 
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
     name: "MainApp",
     platforms: [
         .iOS(.v14),
+        .macOS(.v11),
     ],
     products: [
         .executable(name: "MainApp", targets: ["MainApp"]),
     ],
     dependencies: [
-        .package(path: "../Package1"),
-        .package(path: "../Package2"),
+        .package(path: "Package1"),
+        .package(path: "Package2"),
     ],
     targets: [
         .executableTarget(
@@ -24,6 +26,6 @@ let package = Package(
                 "Package1",
                 "Package2",
             ]
-        ),
+        )
     ]
 )
