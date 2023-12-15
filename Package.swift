@@ -13,6 +13,12 @@ let package = Package(
         .library(
             name: "MonoRepo",
             targets: ["MonoRepo"]),
+        .library(
+            name: "Package1",
+            targets: ["MonoRepo"]),
+        .library(
+            name: "Package2",
+            targets: ["MonoRepo"]),
     ],
     dependencies: [
         .package(path: "Package1"),
