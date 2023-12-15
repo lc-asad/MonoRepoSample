@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package1/.build/arm64-apple-macosx/debug/Package1.build/master.swiftdeps"
+  },
+  "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package1/Sources/Package1/Package1.swift": {
+    "dependencies": "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package1/.build/arm64-apple-macosx/debug/Package1.build/Package1.d",
+    "object": "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package1/.build/arm64-apple-macosx/debug/Package1.build/Package1.swift.o",
+    "swiftmodule": "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package1/.build/arm64-apple-macosx/debug/Package1.build/Package1~partial.swiftmodule",
+    "swift-dependencies": "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package1/.build/arm64-apple-macosx/debug/Package1.build/Package1.swiftdeps"
+  }
+}

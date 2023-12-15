@@ -1,0 +1,80 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "Package2-debug.module": ["<Package2-debug.module>"]
+  "Package2PackageTests-debug.test": ["<Package2PackageTests-debug.test>"]
+  "Package2Tests-debug.module": ["<Package2Tests-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<Package2-debug.module>"]
+  "test": ["<Package2-debug.module>","<Package2PackageTests-debug.test>","<Package2Tests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Sources/Package2/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Tests/Package2Tests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "<Package2-debug.module>":
+    tool: phony
+    inputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.build/Package2.swift.o","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.swiftmodule"]
+    outputs: ["<Package2-debug.module>"]
+
+  "<Package2PackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2PackageTests.xctest/Contents/MacOS/Package2PackageTests"]
+    outputs: ["<Package2PackageTests-debug.test>"]
+
+  "<Package2Tests-debug.module>":
+    tool: phony
+    inputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2Tests.build/Package2Tests.swift.o","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2Tests.swiftmodule"]
+    outputs: ["<Package2Tests-debug.module>"]
+
+  "C.Package2-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Sources/Package2/Package2.swift"]
+    outputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.build/Package2.swift.o","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "Package2"
+    module-output-path: "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.swiftmodule"
+    import-paths: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug"]
+    temps-path: "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.build"
+    objects: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.build/Package2.swift.o"]
+    other-args: ["-target","arm64-apple-macosx10.13","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.build/Package2-Swift.h","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-package-name","package2"]
+    sources: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Sources/Package2/Package2.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "C.Package2PackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.build/Package2.swift.o","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2Tests.build/Package2Tests.swift.o"]
+    outputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2PackageTests.xctest/Contents/MacOS/Package2PackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/Package2PackageTests.xctest/Contents/MacOS/Package2PackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug","-o","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2PackageTests.xctest/Contents/MacOS/Package2PackageTests","-module-name","Package2PackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2PackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/macosx","-target","arm64-apple-macosx13.0","-Xlinker","-add_ast_path","-Xlinker","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2Tests.swiftmodule","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.Package2Tests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Tests/Package2Tests/Package2Tests.swift","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.swiftmodule"]
+    outputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2Tests.build/Package2Tests.swift.o","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2Tests.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "Package2Tests"
+    module-output-path: "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2Tests.swiftmodule"
+    import-paths: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug"]
+    temps-path: "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2Tests.build"
+    objects: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2Tests.build/Package2Tests.swift.o"]
+    other-args: ["-target","arm64-apple-macosx13.0","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-package-name","package2"]
+    sources: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Tests/Package2Tests/Package2Tests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Sources/Package2/","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Tests/Package2Tests/","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Package.swift","/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

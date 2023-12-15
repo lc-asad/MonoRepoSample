@@ -1,0 +1,4 @@
+module Package2 {
+    header "/Users/asadullah.sher/Documents/Practice/MonoRepo/Package2/.build/arm64-apple-macosx/debug/Package2.build/Package2-Swift.h"
+    requires objc
+}
