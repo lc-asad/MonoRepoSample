@@ -15,8 +15,8 @@ let package = Package(
         .library(name: "Package2", targets: ["Package2"]),
     ],
     dependencies: [
-        .package(path: "Package1"),
-        .package(path: "Package2")
+//        .package(path: "Package1"),
+//        .package(path: "Package2")
     ],
     targets: [
         .target(name: "MonoRepo"),
