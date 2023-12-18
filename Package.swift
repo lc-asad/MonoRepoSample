@@ -10,11 +10,16 @@ let package = Package(
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
+        .library(name: "MonoRepo", targets: ["MonoRepo"]),
         .library(name: "Package1", targets: ["Package1"]),
         .library(name: "Package2", targets: ["Package2"]),
     ],
-    dependencies: [],
+    dependencies: [
+        //.package(path: "Package1")
+        //.package(path: "Package2")
+    ],
     targets: [
+        .target(name: "MonoRepo"),
         .target(name: "Package1", dependencies: [], path: "Package1/Sources"),
         .target(name: "Package2", dependencies: [], path: "Package2/Sources")
     ]
