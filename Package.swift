@@ -21,6 +21,6 @@ let package = Package(
     targets: [
         .target(name: "MonoRepo"),
         .target(name: "Package1", dependencies: [], path: "Sources/Package1"),
-        .target(name: "Package2", dependencies: [], path: "Sources/Package12")
+        .target(name: "Package2", dependencies: [], path: "Sources/Package2")
     ]
 )
