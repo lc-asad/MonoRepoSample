@@ -20,7 +20,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "MonoRepo"),
-        .target(name: "Package1", dependencies: [], path: "Sources/Package1"),
-        .target(name: "Package2", dependencies: [], path: "Sources/Package2")
+        .target(name: "Package1", dependencies: [], path: "Package1/Sources/"),
+        .target(name: "Package2", dependencies: [], path: "Package2/Sources/")
     ]
 )
