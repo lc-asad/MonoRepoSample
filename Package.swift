@@ -15,12 +15,12 @@ let package = Package(
         .library(name: "Package2", targets: ["Package2"]),
     ],
     dependencies: [
-//        .package(path: "Package1"),
-//        .package(path: "Package2")
+        .package(path: "Package1"),
+        .package(path: "Package2")
     ],
     targets: [
         .target(name: "MonoRepo"),
-        .target(name: "Package1", dependencies: [], path: "Package1/Sources"),
-        .target(name: "Package2", dependencies: [], path: "Package2/Sources")
+        .target(name: "Package1", dependencies: []),
+        .target(name: "Package2", dependencies: [])
     ]
 )
