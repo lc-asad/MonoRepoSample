@@ -10,31 +10,12 @@ let package = Package(
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "MonoRepo",
-            targets: ["MonoRepo"]),
-        .library(
-            name: "Package1",
-            targets: ["MonoRepo"]),
-        .library(
-            name: "Package2",
-            targets: ["MonoRepo"]),
+        .library(name: "Package1", targets: ["Package1"]),
+        .library(name: "Package2", targets: ["Package2"]),
     ],
-    dependencies: [
-        .package(path: "Package1"),
-        .package(path: "Package2"),
-    ],
+    dependencies: [],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "MonoRepo",
-            dependencies: [
-                "Package1",
-                "Package2",
-            ]),
-        .testTarget(
-            name: "MonoRepoTests",
-            dependencies: ["MonoRepo"]),
+        .target(name: "Package1", dependencies: [], path: "Package1/Sources/Package1"),
+        .target(name: "Package2", dependencies: [], path: "Package2/Sources/Package2")
     ]
 )
